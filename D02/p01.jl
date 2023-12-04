@@ -11,15 +11,11 @@ for line in eachline(IOBuffer(input))
     astring = split(match(r":.*$", line).match[3:end], "; ")
     for pstring in astring
         for ppstring in split(pstring, ", ")
-            # "4 green"
             number, schluss = split(ppstring, " ")
             number = parse(Int, number)
             if (number > max[ind[schluss]])
                 global flag=1
             end
-            #println(number, " ", schluss)
-            #println(flag)
-            #println(max[ind[schluss]])
         end
     end
     if flag==1
